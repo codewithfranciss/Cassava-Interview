@@ -28,7 +28,7 @@ A robust Authentication and Authorization system built with Spring Boot, connect
 - **Security**: Spring Security + JWT
 - **Persistence**: Spring Data JPA
 - **Validation**: Spring Validation
-- **Email Service**: Unosend
+- **Email Service**: Java Mailer
 
 ---
 
