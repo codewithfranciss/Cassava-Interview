@@ -28,11 +28,11 @@ A robust Authentication and Authorization system built with Spring Boot, connect
 - **Security**: Spring Security + JWT
 - **Persistence**: Spring Data JPA
 - **Validation**: Spring Validation
-- **Email Service**: Java Mailer
+- **Email Service**: Custom SMTP Server
 
 ---
 
-## API Documentation (Planned)
+## API Documentation
 
 ### Registration
 - **URL**: `/auth/register`
@@ -51,3 +51,21 @@ A robust Authentication and Authorization system built with Spring Boot, connect
 - **Method**: `POST`
 - **Body**: `{ "email": "...", "password": "..." }`
 - **Response**: `200 OK` - Returns JWT.
+
+### Forgot Password
+- **URL**: `/auth/forgot-password`
+- **Method**: `POST`
+- **Body**: `{ "email": "..." }`
+- **Response**: `200 OK` - Sends password reset OTP to email.
+
+### Confirm OTP
+- **URL**: `/auth/confirm-otp`
+- **Method**: `POST`
+- **Body**: `{ "email": "...", "otp": "..." }`
+- **Response**: `200 OK` - Confirms OTP is valid.
+
+### Reset Password
+- **URL**: `/auth/reset-password`
+- **Method**: `POST`
+- **Body**: `{ "email": "...", "otp": "...", "newPassword": "..." }`
+- **Response**: `200 OK` - Password successfully changed.
