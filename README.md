@@ -9,20 +9,18 @@ A robust Authentication and Authorization system built with Spring Boot, connect
 - Maven
 - Supabase Account (PostgreSQL)
 
-### Configuration
-Update the database connection details in `src/main/resources/application.properties`.
 
 ## Features & Task Tracking
 
 ### Authentication Flow
-- [ ] **Registration** `POST /auth/register`
-- [ ] **Email Verification** `POST /auth/verify-email`
-- [ ] **Login (JWT)** `POST /auth/login`
+- [x] **Registration** `POST /auth/register`
+- [x] **Email Verification** `POST /auth/verify-email`
+- [x] **Login (JWT)** `POST /auth/login`
 
 ### Password Management Flow
-- [ ] **Request Password Reset** `POST /auth/forgot-password`
-- [ ] **Confirm OTP** `POST /auth/confirm-otp`
-- [ ] **Reset Password** `POST /auth/reset-password`
+- [x] **Request Password Reset** `POST /auth/forgot-password`
+- [x] **Confirm OTP** `POST /auth/confirm-otp`
+- [x] **Reset Password** `POST /auth/reset-password`
 
 ## Tech Stack
 - **Framework**: Spring Boot 2.7.18
@@ -30,11 +28,11 @@ Update the database connection details in `src/main/resources/application.proper
 - **Security**: Spring Security + JWT
 - **Persistence**: Spring Data JPA
 - **Validation**: Spring Validation
-- **Email Service**: Unosend
+- **Email Service**: Custom SMTP Server
 
 ---
 
-## API Documentation (Planned)
+## API Documentation
 
 ### Registration
 - **URL**: `/auth/register`
@@ -53,3 +51,21 @@ Update the database connection details in `src/main/resources/application.proper
 - **Method**: `POST`
 - **Body**: `{ "email": "...", "password": "..." }`
 - **Response**: `200 OK` - Returns JWT.
+
+### Forgot Password
+- **URL**: `/auth/forgot-password`
+- **Method**: `POST`
+- **Body**: `{ "email": "..." }`
+- **Response**: `200 OK` - Sends password reset OTP to email.
+
+### Confirm OTP
+- **URL**: `/auth/confirm-otp`
+- **Method**: `POST`
+- **Body**: `{ "email": "...", "otp": "..." }`
+- **Response**: `200 OK` - Confirms OTP is valid.
+
+### Reset Password
+- **URL**: `/auth/reset-password`
+- **Method**: `POST`
+- **Body**: `{ "email": "...", "otp": "...", "newPassword": "..." }`
+- **Response**: `200 OK` - Password successfully changed.

@@ -77,7 +77,7 @@ public class AuthService {
     }
 
     public AuthResponse login(LoginRequest request) {
-        // This will automatically process the password and throw exception if wrong
+        
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword()));
 

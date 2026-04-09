@@ -39,10 +39,6 @@ public class EmailService {
             System.out.println("Email sent successfully to: " + toEmail);
         } catch (Exception e) {
             System.err.println("Failed to send email: " + e.getMessage());
-            System.out.println("\n===============================================");
-            System.out.println("  FALLBACK - EMAIL TO: " + toEmail);
-            System.out.println("  YOUR VERIFICATION OTP IS: " + otp);
-            System.out.println("===============================================\n");
         }
     }
 }

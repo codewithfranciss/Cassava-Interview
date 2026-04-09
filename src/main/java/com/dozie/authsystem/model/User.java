@@ -31,9 +31,11 @@ public class User implements UserDetails {
 
     private LocalDateTime otpExpiry;
 
-    public User() {}
+    public User() {
+    }
 
-    public User(String email, String password, String fullName, boolean isVerified, String otp, LocalDateTime otpExpiry) {
+    public User(String email, String password, String fullName, boolean isVerified, String otp,
+            LocalDateTime otpExpiry) {
         this.email = email;
         this.password = password;
         this.fullName = fullName;
@@ -42,26 +44,61 @@ public class User implements UserDetails {
         this.otpExpiry = otpExpiry;
     }
 
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
+    public Long getId() {
+        return id;
+    }
 
-    public String getEmail() { return email; }
-    public void setEmail(String email) { this.email = email; }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-    public void setPassword(String password) { this.password = password; }
-    public String getPassword() { return password; }
+    public String getEmail() {
+        return email;
+    }
 
-    public String getFullName() { return fullName; }
-    public void setFullName(String fullName) { this.fullName = fullName; }
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-    public boolean isVerified() { return isVerified; }
-    public void setVerified(boolean verified) { isVerified = verified; }
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
-    public String getOtp() { return otp; }
-    public void setOtp(String otp) { this.otp = otp; }
+    public String getPassword() {
+        return password;
+    }
 
-    public LocalDateTime getOtpExpiry() { return otpExpiry; }
-    public void setOtpExpiry(LocalDateTime otpExpiry) { this.otpExpiry = otpExpiry; }
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public boolean isVerified() {
+        return isVerified;
+    }
+
+    public void setVerified(boolean verified) {
+        isVerified = verified;
+    }
+
+    public String getOtp() {
+        return otp;
+    }
+
+    public void setOtp(String otp) {
+        this.otp = otp;
+    }
+
+    public LocalDateTime getOtpExpiry() {
+        return otpExpiry;
+    }
+
+    public void setOtpExpiry(LocalDateTime otpExpiry) {
+        this.otpExpiry = otpExpiry;
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -74,14 +111,22 @@ public class User implements UserDetails {
     }
 
     @Override
-    public boolean isAccountNonExpired() { return true; }
+    public boolean isAccountNonExpired() {
+        return true;
+    }
 
     @Override
-    public boolean isAccountNonLocked() { return true; }
+    public boolean isAccountNonLocked() {
+        return true;
+    }
 
     @Override
-    public boolean isCredentialsNonExpired() { return true; }
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
 
     @Override
-    public boolean isEnabled() { return true; }
+    public boolean isEnabled() {
+        return true;
+    }
 }
